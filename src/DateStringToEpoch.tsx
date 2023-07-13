@@ -7,7 +7,7 @@ export function DateStringToEpoch() {
 
     return (
         <>
-            <h2>Date string to epoch</h2>
+            <h2 class="text-center">Date string to epoch</h2>
             <input autocomplete="off" class="font-mono fill-width" type="text" onInput={e => {
                 if (!e.currentTarget.value) {
                     setDateError("");
