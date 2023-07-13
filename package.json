@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "makedeploy": "pnpm run build && tar cf unix-epoch.tar dist"
   },
   "keywords": [],
   "author": "",
