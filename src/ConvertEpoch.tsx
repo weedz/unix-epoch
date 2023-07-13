@@ -4,8 +4,6 @@ import { dateFormatter, utcDateFormatter } from "./formatters";
 export function ConvertEpoch() {
     const [epoch, setEpoch] = createSignal(new Date());
 
-    console.log("Date parts:", dateFormatter.formatToParts(epoch()));
-
     return (
         <>
             <h2 class="text-center">Convert epoch to human-readable format</h2>

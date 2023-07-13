@@ -6,17 +6,24 @@ import "./style.css";
 
 export default function App() {
     return (
-        <div>
-            <h1 class="text-center">Unix epoch and Timestamp Converter</h1>
-            <section>
-                <EpochTimer />
-            </section>
-            <section>
-                <ConvertEpoch />
-            </section>
-            <section>
-                <DateStringToEpoch />
-            </section>
-        </div>
+        <>
+            <header>
+                <h1 class="text-center">Unix epoch and Timestamp Converter</h1>
+            </header>
+            <main>
+                <section>
+                    <EpochTimer />
+                </section>
+                <section>
+                    <ConvertEpoch />
+                </section>
+                <section>
+                    <DateStringToEpoch />
+                </section>
+            </main>
+            <footer>
+                <span>Source on <a href="https://github.com/weedz/unix-epoch" target="_blank">Github</a></span>
+            </footer>
+        </>
     )
 }
