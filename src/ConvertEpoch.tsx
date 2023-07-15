@@ -7,13 +7,16 @@ export function ConvertEpoch() {
     return (
         <>
             <h2 class="text-center">Convert epoch to human-readable format</h2>
-            <input autocomplete="off" class="font-mono" type="text" onInput={e => {
-                const valueAsNumber = Number.parseInt(e.currentTarget.value, 10);
-                if (Number.isNaN(valueAsNumber) || valueAsNumber < 0) {
-                    return;
-                }
-                setEpoch(new Date(valueAsNumber * 1000));
-            }} value={Math.floor(epoch().getTime() / 1000)} />
+            <label class="flex-col">
+                <span>Timestamp:</span>
+                <input name="timestamp" autocomplete="off" class="font-mono" type="text" placeholder="Enter a timestamp..." onInput={e => {
+                    const valueAsNumber = Number.parseInt(e.currentTarget.value, 10);
+                    if (Number.isNaN(valueAsNumber) || valueAsNumber < 0) {
+                        return;
+                    }
+                    setEpoch(new Date(valueAsNumber * 1000));
+                }} value={Math.floor(epoch().getTime() / 1000)} />
+            </label>
             <section>
                 <ul>
                     <li>

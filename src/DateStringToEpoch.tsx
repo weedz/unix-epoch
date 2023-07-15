@@ -8,20 +8,23 @@ export function DateStringToEpoch() {
     return (
         <>
             <h2 class="text-center">Date string to epoch</h2>
-            <input autocomplete="off" class="font-mono fill-width" type="text" onInput={e => {
-                if (!e.currentTarget.value) {
-                    setDateError("");
-                    return;
-                }
-                try {
-                    const newDate = new Date(e.currentTarget.value);
-                    setDateError("");
-                    setDate(newDate);
-                } catch (err) {
-                    setDateError("Invalid date");
-                    console.log("Invalid date:", err)
-                }
-            }} />
+            <label class="flex-col">
+                <span>Date string:</span>
+                <input name="date-string" autocomplete="off" class="font-mono" type="text" placeholder="Enter a date..." onInput={e => {
+                    if (!e.currentTarget.value) {
+                        setDateError("");
+                        return;
+                    }
+                    try {
+                        const newDate = new Date(e.currentTarget.value);
+                        setDateError("");
+                        setDate(newDate);
+                    } catch (err) {
+                        setDateError("Invalid date");
+                        console.log("Invalid date:", err)
+                    }
+                }} />
+            </label>
             <p class="small">Input format according to javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">Date</a> constructor.</p>
             <span>{dateError()}</span>
             <section>
