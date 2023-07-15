@@ -17,11 +17,15 @@ export function DateStringToEpoch() {
                     }
                     try {
                         const newDate = new Date(e.currentTarget.value);
+                        if (Number.isNaN(newDate.getTime())) {
+                            // Detect a RangeError, invalid date
+                            setDateError("Invalid date");
+                            return;
+                        }
                         setDateError("");
                         setDate(newDate);
                     } catch (err) {
                         setDateError("Invalid date");
-                        console.log("Invalid date:", err)
                     }
                 }} />
             </label>
