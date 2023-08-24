@@ -27,6 +27,11 @@ h2 {
     padding: 0;
 }
 
+p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 #root {
     flex: 1;
     padding: 23px;
