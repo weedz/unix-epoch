@@ -22,7 +22,7 @@ export default function App() {
                 </section>
             </main>
             <footer>
-                <span>Source on <a href="https://github.com/weedz/unix-epoch" target="_blank">Github</a></span>
+                <span>Source on <a href="https://github.com/weedz/unix-epoch" rel="noreferrer" target="_blank">Github</a></span>
             </footer>
         </>
     )
