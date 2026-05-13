@@ -3,7 +3,7 @@
       "strict": true,
       "target": "ESNext",
       "module": "ESNext",
-      "moduleResolution": "node",
+      "moduleResolution": "bundler",
       "esModuleInterop": true,
       "verbatimModuleSyntax": true,
       "isolatedModules": true,
