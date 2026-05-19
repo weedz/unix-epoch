@@ -10,22 +10,35 @@ export function DateStringToEpoch() {
       <h2 class="text-center">Date string to epoch</h2>
       <label class="flex-col">
         <span>Date string:</span>
-        <input name="date-string" autocomplete="off" class="font-mono" type="text" placeholder="Enter a date..." onInput={e => {
-          if (!e.currentTarget.value) {
+        <input
+          name="date-string"
+          autocomplete="off"
+          class="font-mono"
+          type="text"
+          placeholder="Enter a date..."
+          onInput={(e) => {
+            if (!e.currentTarget.value) {
+              setDateError("");
+              return;
+            }
+            const newDate = new Date(e.currentTarget.value);
+            if (Number.isNaN(newDate.getTime())) {
+              // Detect a RangeError, invalid date
+              setDateError("Invalid date");
+              return;
+            }
             setDateError("");
-            return;
-          }
-          const newDate = new Date(e.currentTarget.value);
-          if (Number.isNaN(newDate.getTime())) {
-            // Detect a RangeError, invalid date
-            setDateError("Invalid date");
-            return;
-          }
-          setDateError("");
-          setDate(newDate);
-        }} />
+            setDate(newDate);
+          }}
+        />
       </label>
-      <p class="small">Input format according to javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">Date</a> constructor.</p>
+      <p class="small">
+        Input format according to javascript{" "}
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">
+          Date
+        </a>{" "}
+        constructor.
+      </p>
       <span>{dateError()}</span>
       <section>
         <ul>
@@ -48,5 +61,5 @@ export function DateStringToEpoch() {
         </ul>
       </section>
     </>
-  )
+  );
 }
